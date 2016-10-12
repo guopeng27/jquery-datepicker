@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <style>
+
+        .datepicker-wrapper{position: absolute;background: #fff;border:1px solid #ccc;}
+        .datepicker-wrapper table td{cursor: pointer;}
+        .datepicker-wrapper .picker-header{text-align: center;overflow: hidden;}
+        .datepicker-wrapper .cur{background: #ddd;}
+        .datepicker-wrapper .active{background: blue;color:#fff;}
+        .datepicker-wrapper .other{color:#ddd;}
+        .datepicker-wrapper .turn-btn{text-decoration: none;}
+        .datepicker-wrapper .turn-prev{float: left;}
+        .datepicker-wrapper .turn-next{float: right;}
+    </style>
+</head>
+<body>
+<input type="text" id="datepicker1" class="datepicker_input">
+<input type="text" id="datepicker2" class="datepicker_input">
+
+
+<script src="index.js"></script>
+<script>
+    $('.datepicker_input').datepicker();
+</script>
+</body>
+</html>
