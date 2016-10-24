@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="moment.js"></script>
@@ -11,9 +11,14 @@
 </head>
 <body>
 <input type="text" id="test">
+
+<div id="aaa"></div>
 <script>
 
-    $('#test').daterangepicker();
+    $('#test').daterangepicker({
+        parentEl:'#aaa',
+        defaultDate : '2016-08-09'
+    });
 </script>
 </body>
 </html>
