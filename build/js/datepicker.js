@@ -64,6 +64,7 @@
 
 
             this.buildHeader();
+            this.buildFooter();
             this.updateCalendar(this.cur_year,this.cur_month,this.cur_day);
 
         },
@@ -117,7 +118,7 @@
         },
 
         setPosition :function(){
-            var top = this.element.offset().top + this.element.outerHeight() + 1 ;
+            var top = this.element.offset().top + this.element.outerHeight() + 8;
             var left = this.element.offset().left;
 
             this.container.css({top:top,left:left});
@@ -241,12 +242,6 @@
         buildHeader : function(){
             var _html = '';
 
-            //确认，取消日历按钮
-            _html += '<div class="operate-btn">';
-            _html += '<button class="apply-btn">确定</button>';
-            _html += '<button class="cancel-btn">取消</button>';
-            _html += '</div>';
-
             //年份选择器
             var year_options = '';
             for(var yops = (this.cur_year-10);yops < (this.cur_year+10);yops++){
@@ -274,7 +269,16 @@
 
             this.container.find('.picker-header').append(_html);
         },
+        buildFooter : function(){
+            var _html = '';
+            //确认，取消日历按钮
+            _html += '<div class="operate-btn">';
+            _html += '<button class="cancel-btn">取消</button>';
+            _html += '<button class="apply-btn">确定</button>';
+            _html += '</div>';
 
+            this.container.find('.picker-footer').append(_html);
+        },
         //构建日历表格
         buildCalendar: function (year, month, day) {
             var y = year,

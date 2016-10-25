@@ -9,12 +9,14 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
+const LessPluginAutoPrefix = require('less-plugin-autoprefix');//css自动编译私有前缀
+const autoprefix = new LessPluginAutoPrefix({ browsers: ["ie >= 8", "ie_mob >= 10", "ff >= 26", "chrome >= 30", "safari >= 6", "opera >= 23", "ios >= 5", "android >= 2.3", "bb >= 10"] });
 
 gulp.task('css',function(){
     gulp.src('build/less/*.less')
         .pipe(sourcemaps.init())
         .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
-        .pipe(less())
+        .pipe(less({ plugins: [autoprefix] }))
         .pipe(cleancss())
         .pipe(rename(function(path){
             path.extname = '.min.css'
